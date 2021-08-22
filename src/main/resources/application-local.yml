@@ -1,0 +1,11 @@
+spring:
+  config:
+    activate:
+      on-profile: "local"
+    import: config/local/datasource.yml
+springdoc:
+  server:
+    url: http://localhost:8080/
+
+logging:
+  config: classpath:config/local/log4j2.xml

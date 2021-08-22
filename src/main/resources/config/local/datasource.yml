@@ -1,0 +1,21 @@
+datasource:
+  primary:
+    spring:
+      flyway:
+        url: jdbc:postgresql://localhost:5432/demo
+        user: demo
+        password: 1234
+    config:
+      password: 1234
+      url: jdbc:log4jdbc:postgresql://localhost:5432/demo
+      username: demo
+  second:
+    spring:
+      flyway:
+        url: jdbc:postgresql://localhost:5432/demo
+        user: demo
+        password: 1234
+    config:
+      password: 1234
+      url: jdbc:log4jdbc:postgresql://localhost:5432/demo
+      username: demo

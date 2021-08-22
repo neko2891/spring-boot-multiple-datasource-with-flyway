@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: Demo
+  profiles:
+    active: local
+  config:
+    import: config/_base/datasource.yml
+  datasource:
+    initialization-mode: never
+log4jdbc:
+  log4j2:
+    properties:
+      file: config/_base/log4jdbc.log4j2.properties

@@ -1,0 +1,87 @@
+datasource:
+  primary:
+    spring:
+      flyway:
+        driver-class-name: org.postgresql.Driver
+        url:
+        user:
+        password:
+        default-schema: db1
+        schemas:
+          - db1
+        locations:
+          - classpath:db/primary/migration
+        baseline-on-migrate: true
+        baseline-version: 1
+        validate-migration-naming: true
+        validate-on-migrate: true
+        enabled: true
+    config:
+      driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+      password:
+      schema: fet
+      url:
+      username:
+    jpa:
+      properties:
+        hibernate:
+          default_schema: db1
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+          show_sql: false
+          format_sql: true
+          use_sql_comments: false
+          hbm2ddl.auto: none
+          jdbc:
+            time_zone: Asia/Taipei
+          cache:
+            use_second_level_cache: true
+            use_query_cache: true
+            region:
+              factory_class: org.hibernate.cache.ehcache.internal.SingletonEhcacheRegionFactory
+            region_prefix: hibernate
+          connection:
+            charSet: utf8mb4
+            characterEncoding: utf8
+  second:
+    spring:
+      flyway:
+        driver-class-name: org.postgresql.Driver
+        url:
+        user:
+        password:
+        default-schema: db2
+        schemas:
+          - db2
+        locations:
+          - classpath:db/second/migration
+        baseline-on-migrate: true
+        baseline-version: 1
+        validate-migration-naming: true
+        validate-on-migrate: true
+        enabled: true
+    config:
+      driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+      password:
+      schema: test
+      url:
+      username:
+    jpa:
+      properties:
+        hibernate:
+          default_schema: db2
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+          show_sql: false
+          format_sql: true
+          use_sql_comments: false
+          hbm2ddl.auto: none
+          jdbc:
+            time_zone: Asia/Taipei
+          cache:
+            use_second_level_cache: true
+            use_query_cache: true
+            region:
+              factory_class: org.hibernate.cache.ehcache.internal.SingletonEhcacheRegionFactory
+            region_prefix: hibernate
+          connection:
+            charSet: utf8mb4
+            characterEncoding: utf8
